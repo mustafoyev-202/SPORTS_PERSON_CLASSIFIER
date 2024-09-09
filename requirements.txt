@@ -3,12 +3,7 @@ matplotlib
 seaborn
 pandas
 numpy
-os
-shutil
-pywt
 scikit-learn
 joblib
-json
 flask
 PyWavelets
-base64
