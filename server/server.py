@@ -21,5 +21,5 @@ def classify_image():
 if __name__ == "__main__":
     print("Starting Python Flask Server For Sports Celebrity Image Classification")
     util.load_saved_artifacts()
-    app.run(host="0.0.0.0", port=int(os.environ["PORT"]))  # Use the PORT provided by Render
-
+    port = int(os.environ.get("PORT", 5000))  # Use environment variable for port
+    app.run(host="0.0.0.0", port=port)
