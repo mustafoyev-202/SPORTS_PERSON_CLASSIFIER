@@ -5,9 +5,9 @@ import os
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
-    return render_template("app.html")  # Serve the app.html page
+    return render_template("app.html")
 
 
 @app.route("/classify_image", methods=["GET", "POST"])
@@ -21,5 +21,5 @@ def classify_image():
 if __name__ == "__main__":
     print("Starting Python Flask Server For Sports Celebrity Image Classification")
     util.load_saved_artifacts()
-    port = int(os.environ.get("PORT", 5000))  # Use environment variable for port
+    port = int(os.environ.get("PORT", 5000))    
     app.run(host="0.0.0.0", port=port)
